@@ -10,6 +10,19 @@ const validateNumber=value=>{
      }
 }
 
+const checkGuess=(guess)=>{
+   if(guess===randomNumber){
+    console.log("You guessed correctly")
+   }
+    else if(guess<randomNumber){
+    console.log("Too low!Try again")
+   
+   }
+   else {
+    console.log("Too high!Try again")
+   }
+}
+
 const play=()=>{
   const number=prompt("Enter a number between 1 to 100")
 
@@ -17,10 +30,13 @@ const play=()=>{
 
 
   const validation=validateNumber(number)
-  console.log(validation)
+
   if(validation){
+   console.log(validation)
     return play()
   }
+
+  checkGuess(+number)
 }
 
 
